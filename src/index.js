@@ -6,28 +6,28 @@ import BikeService from './bike-service';
 // Business Logic
 
 function getBike(bikeLimit, bikeLocation, bikeColor, bikeLocationDistance) {
-  let promise = BikeService.getBike(bikeLimit, bikeLocation, bikeColor, bikeLocationDistance); 
-  promise.then(function(response) {
-    printElements(response);
-  }, function(errorMessage) {
-    printError(errorMessage);
-  });
+  BikeService.getBike(bikeLimit, bikeLocation, bikeColor, bikeLocationDistance) 
+    .then(function(response) {
+      if (response.bikes) {
+        printElements(response, bikeLimit, bikeLocation, bikeColor, bikeLocationDistance);
+      } else {
+        printError(response, bikeLocation, bikeColor, bikeLocationDistance);
+      }
+    });
 }
 
 // UI Logic
 
-function printError(error) {
-  document.querySelector('#errorMessage').innerText = `There was an error accessing bike data for ${error[2]}: ${error[0].status} ${error[1].error}`;
+function printError(error, bikeLocation, bikeColor, bikeLocationDistance) {
+  document.querySelector('#errorMessage').innerText = `There was an error accessing bike data for the color ${bikeColor} within ${bikeLocationDistance} miles of ${bikeLocation}: ${error}.`;
 }
 
-function printElements(response) {
-  console.log("hi response",response);
-  console.log("response1",response[1]);
+function printElements(response, bikeLimit) {
   const ul = document.querySelector('ul');
-  for (let i = 0; i < response[1]; i++) {
+  for (let i = 0; i < bikeLimit; i++) {
     const bikeBullet = document.createElement("li");
     ul.append(bikeBullet);
-    bikeBullet.innerText = `${response[0].bikes[i].title}, ${response[0].bikes[i].frame_colors}, ${response[0].bikes[i].date_stolen}, ${response[0].bikes[i].stolen_location}.`;
+    bikeBullet.innerText = `${response.bikes[i].title}, ${response.bikes[i].frame_colors}, ${response.bikes[i].date_stolen}, ${response.bikes[i].stolen_location}.`;
   }
 }
 
