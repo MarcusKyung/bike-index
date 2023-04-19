@@ -1,6 +1,6 @@
-# _Giphy Search_
+# _Bike Index Search_
 
-#### By _**Marcus Kyung**_
+#### By _**Marcus Kyung & Eusebie Siebenberg**_
 
 #### _Allows a user to search Giphy for top 5 results using a user input. Also displays top 5 trending gifs and a random gif._
 
