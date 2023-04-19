@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <title>Bike Index</title>
+</head>
+<body>
+  <div class="container">
+    <h1>Search Bike Index:</h1>
+    <form id="bikeSelection">
+      <label for="bikeLimit">Bike Display Results:</label>
+      <input id="bikeLimit" type="number" name="bikeLimit" required>
+
+      <label for="bikeLocation">Bike Location:</label>
+      <input id="bikeLocation" type="text" name="bikeLocation" required>
+      
+      <label for="bikeColor">Bike Color:</label>
+      <input id="bikeColor" type="text" name="bikeColor" required>
+      
+      <label for="bikeLocationDistance">Distance From Location:</label>
+      <select name="bikeLocationDistance" id="bikeLocationDistance" required>
+        <option disabled selected value> -- select an option -- </option>
+        <option value="10" id="10mi">10 Miles</option>
+        <option value="50" id="50mi">50 Miles</option>
+        <option value="100" id="100mi">100 Miles</option>
+      </select>
+      <button type="submit" class="btn-success" id="searchGiphy">Search Bikeindex.org</button>
+    </form>
+    <hr>
+    <h3>Search Results:</h3>
+    <p id="errorMessage"></p>
+    <ul id="results">
+    </ul>
+  </div>
+</body>
+</html>
