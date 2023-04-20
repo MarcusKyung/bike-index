@@ -6,13 +6,16 @@
 <body>
   <div class="container">
     <h1>Search Bike Index:</h1>
-    <form id="bikeSelection">
+    <form id="bike-selection">
       <label for="bikeLimit">Bike Display Results:</label>
       <input id="bikeLimit" type="number" name="bikeLimit" min="1" required>
 
       <label for="bikeLocation">Bike Location:</label>
       <input id="bikeLocation" type="text" name="bikeLocation" required>
-      
+
+      <label for="bikeManufacturer">Manufacturer:</label>
+      <input id="bikeManufacturer" type="text" name="bikeManufacturer" required>
+
       <label for="bikeColor">Bike Color:</label>
       <input id="bikeColor" type="text" name="bikeColor" required>
       
@@ -23,7 +26,7 @@
         <option value="50" id="50mi">50 Miles</option>
         <option value="100" id="100mi">100 Miles</option>
       </select>
-      <button type="submit" class="btn-success" id="searchGiphy">Search Bikeindex.org</button>
+      <button type="submit" class="btn-success" id="searchBikeIndex">Search Bikeindex.org</button>
     </form>
     <hr>
     <h3>Search Results:</h3>

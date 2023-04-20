@@ -10,3 +10,12 @@ ul{
   padding-top: 10px;
   padding-bottom: 10px;
 }
+
+/* body {
+  background-image: linear-gradient(to bottom, rgb(255, 255, 255), rgba(0, 2, 2, 0.5)), url("bike.jpg");
+  background-position: auto;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  font-family: Georgia; 
+} */
