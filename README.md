@@ -2,56 +2,50 @@
 
 #### By _**Marcus Kyung & Eusebie Siebenberg**_
 
-#### _Allows a user to search Giphy for top 5 results using a user input. Also displays top 5 trending gifs and a random gif._
+#### _A practice application demonstrating API calls using Promise, Fetch and Async & Await functions._
 
 ## Technologies Used
 
+* _VS Code_
 * _HTML_
 * _CSS_
 * _JavaScript_
-* _"@babel/core": "^7.18.6",_
-* _"@babel/plugin-transform-modules-commonjs": "^7.18.6",_
-* _"clean-webpack-plugin": "^3.0.0",_
-* _"css-loader": "^3.6.0",_
-* _"dotenv-webpack": "^2.0.0",_
-* _"eslint": "^8.18.0",_
-* _"eslint-webpack-plugin": "^2.7.0",_
-* _"file-loader": "^6.2.0",_
-* _"html-loader": "^1.3.2",_
-* _"html-webpack-plugin": "^4.5.2",_
-* _"jest": "^24.9.0",_
-* _"style-loader": "^1.3.0",_
-* _"webpack": "4.46.0",_
-* _"webpack-cli": "^3.3.12",_
-* _"webpack-dev-server": "3.11.3"_
+* _Postman_
+* _Node.js v16.3.1_
+* _NPM v8.1.2_
+* _Webpack v4.46.0_
+* _ES Lint v8.18.0_
+* _Babel version"^7.18.6"_
+* _Webpack-cli version "^3.3.12"_
+* _Webpack-dev-server v3.11.3_
 
 ## Description
 
-_{This is a detailed description of your application. Give as much detail as needed to explain what the application does as well as any other information you want users or other developers to have.}_
+_This application allows the user to search the Bike Index database using the open-source Bike Index API, and displays a list of stolen bikes based on Location, Manufacturer, Color & Proximity._
 
 ## Setup/Installation Requirements
 
-* _Download project repository from GH to local machine_
-* _Use local machine terminal to install all project packages using command ```$ npm install```_
-* _Use local machine terminal to build project using command ```$ npm build```_
-* _Use local machine terminal to start development server using command ```$ npm start```_
-* _easy-to-understand_
-* _format_
-
-_{Leave nothing to chance! You want it to be easy for potential users, employers and collaborators to run your app. Do I need to run a server? How should I set up my databases? Is there other code this application depends on? We recommend deleting the project from your desktop, re-cloning the project from GitHub, and writing down all the steps necessary to get the project working again.}_
+* _Download or Clone project repository from GH to local machine > [Bike Index](https://github.com/MarcusKyung/bike-index.git)_
+* _Navigate to the root directory of ```bike-index``` using your Terminal_
+* _Create a new ```.env``` file in the root directory using the ```touch .env``` command_
+* _Get an API_Key by creating an account at https://bikeindex.org/users/new When you are ready to set up an API key, scroll down to find the "Your applications" section of "OAuth" within the API Documentation, it's from here you can create an application and get an API Key, along with customizing your criteria to get get a personal ACCESS TOKEN._
+* _Copy API_KEY and store in your ```.env``` file as such: API_KEY=xxxxxxx_
+* _Use local machine terminal to install all project packages & dependencies using command ```$ npm install```_
+* _Use local machine terminal to build project using command ```$ npm run build```_
+* _Use local machine terminal to start a development server using command ```$ npm start```_
+* _Use local machine terminal to open project in the free text editor VS Code using command ```code .```_
 
 ## Known Bugs
 
-* _Any known issues_
-* _should go here_
-
-## License
+* _No known bugs as of 04/20/23_
 
 _For questions, comments, or concerns please reach out at Kyungmj@gmail.com_
 
-MIT License
+## License
 
-Copyright (c) [2023] [Marcus Kyung]
+[MIT](https://opensource.org/license/mit/)
+
+Copyright (c) [2023] [Marcus Kyung, Eusebie Siebenberg]
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal
 in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions: 
