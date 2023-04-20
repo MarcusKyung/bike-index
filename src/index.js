@@ -5,15 +5,13 @@ import BikeService from './bike-service';
 
 // Business Logic
 
-function getBike(bikeLimit, bikeManufacturer, bikeLocation, bikeColor, bikeLocationDistance) {
-  BikeService.getBike(bikeLimit, bikeManufacturer, bikeLocation, bikeColor, bikeLocationDistance) 
-    .then(function(response) {
-      if (response.bikes) {
-        printElements(response, bikeLimit, bikeManufacturer, bikeLocation, bikeColor, bikeLocationDistance);
-      } else {
-        printError(response, bikeLocation, bikeManufacturer, bikeColor, bikeLocationDistance);
-      }
-    });
+async function getBike(bikeLimit, bikeManufacturer, bikeLocation, bikeColor, bikeLocationDistance) {
+  const response = await BikeService.getBike(bikeLimit, bikeManufacturer, bikeLocation, bikeColor, bikeLocationDistance);
+  if (response.bikes) {
+    printElements(response, bikeLimit, bikeManufacturer, bikeLocation, bikeColor, bikeLocationDistance);
+  } else {
+    printError(response, bikeLocation, bikeManufacturer, bikeColor, bikeLocationDistance);
+  }
 }
 
 // UI Logic
@@ -73,6 +71,7 @@ function handleFormSubmission(event) {
   document.querySelector('#bikeLocation').value = null;
   document.querySelector('#bikeColor').value = null;
   document.querySelector('#bikeLocationDistance').value = null;
+  document.querySelector('#resultsDiv').innerText = null;
   getBike(bikeLimit, bikeManufacturer, bikeLocation, bikeColor, bikeLocationDistance);
   
 }
