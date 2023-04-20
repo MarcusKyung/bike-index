@@ -19,15 +19,42 @@ function getBike(bikeLimit, bikeLocation, bikeColor, bikeLocationDistance) {
 // UI Logic
 
 function printError(error, bikeLocation, bikeColor, bikeLocationDistance) {
-  document.querySelector('#errorMessage').innerText = `There was an error accessing bike data for the color ${bikeColor} within ${bikeLocationDistance} miles of ${bikeLocation}: ${error}.`;
+  document.querySelector('#errorMessage').innerText = `There was an error accessing data for the ${bikeColor} bikes within ${bikeLocationDistance} miles of ${bikeLocation}: ${error}.`;
 }
 
 function printElements(response, bikeLimit) {
-  const ul = document.querySelector('ul');
   for (let i = 0; i < bikeLimit; i++) {
-    const bikeBullet = document.createElement("li");
-    ul.append(bikeBullet);
-    bikeBullet.innerText = `${response.bikes[i].title}, ${response.bikes[i].frame_colors}, ${response.bikes[i].date_stolen}, ${response.bikes[i].stolen_location}.`;
+    const bikeDetails = document.createElement("ul");
+    bikeDetails.classList.add("bike-details");
+
+    const bikeTitle = document.createElement("li");
+    bikeDetails.append(bikeTitle);
+    const bikeColor = document.createElement("li");
+    bikeDetails.append(bikeColor);
+    const bikeStolenTime = document.createElement("li");
+    bikeDetails.append(bikeStolenTime);
+    const bikeLocation = document.createElement("li");
+    bikeDetails.append(bikeLocation);
+    const bikeWebpage = document.createElement("li");
+    bikeDetails.append(bikeWebpage);
+    bikeTitle.innerText = "Bike Title: " + `${response.bikes[i].title}`;
+    bikeColor.innerText = "Frame Color(s) : " + `${response.bikes[i].frame_colors}`;
+    bikeLocation.innerText =  "Stolen Location : " + `${response.bikes[i].stolen_location}`;
+
+    const timestamp = `${response.bikes[i].date_stolen}`;
+    const date = new Date(timestamp * 1000);
+    const month = date.getMonth() +  1;
+    const day = date.getDate();
+    const year = date.getFullYear();
+    const dateStolenOutput = `${month}/${day}/${year}`;
+    bikeStolenTime.innerText =  "Date Stolen : " +  `${dateStolenOutput}`;
+    
+    const bikeWebpageLink = document.createElement("a");
+    bikeWebpageLink.href = `${response.bikes[i].url}`;
+    bikeWebpageLink.innerText = "Stolen Bike Listing";
+    bikeWebpage.append(bikeWebpageLink);
+    const result = document.querySelector('#resultsDiv');
+    result.append(bikeDetails);
   }
 }
 

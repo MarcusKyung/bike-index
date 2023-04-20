@@ -8,7 +8,7 @@
     <h1>Search Bike Index:</h1>
     <form id="bikeSelection">
       <label for="bikeLimit">Bike Display Results:</label>
-      <input id="bikeLimit" type="number" name="bikeLimit" required>
+      <input id="bikeLimit" type="number" name="bikeLimit" min="1" required>
 
       <label for="bikeLocation">Bike Location:</label>
       <input id="bikeLocation" type="text" name="bikeLocation" required>
@@ -30,6 +30,7 @@
     <p id="errorMessage"></p>
     <ul id="results">
     </ul>
+    <div id="resultsDiv"></div>
   </div>
 </body>
 </html>

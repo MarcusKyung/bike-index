@@ -1,3 +1,12 @@
-.gifName {
-  margin-left: 50px;
+.bike-details:nth-of-type(odd) {
+  background-color: #ccc;
+}
+
+.bike-details:nth-of-type(even) {
+  background-color: #fff;
+}
+
+ul{
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
